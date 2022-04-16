@@ -7,27 +7,45 @@
 </head>
 <body id="app">
 <div :style="{'background':color}">
-    <form action="">
+    <form action="" @submit.prevent="checkForm">
         <h2 style="text-align: center">Fill in the form</h2>
         <div class="wrapper" >
 
-        <div class="area1" >
+        <div class="area_name" >
             <input type="text" name="name" placeholder="Name" required><br>
         </div>
-        <div class="area2">
+        <div class="area_surname">
             <input type="text" name="surname" placeholder="Surname" required><br>
         </div>
-        <div class="area3">
-            <input type="radio" id="male" value="lightskyblue" v-model="color"><label for="male">Male</label>
-            <input type="radio" id="female" value="pink" v-model="color"><label for="female">Female</label><br>
+        <div class="area_state">
+            <input type="radio" id="male" value="lightskyblue" name="state" v-model="color"><label for="male">Male</label>
+            <input type="radio" id="female" value="pink" name="state" v-model="color"><label for="female">Female</label><br>
+            <span id="error_state"></span>
         </div>
-        <div class="area4">
-            <input id="phone" type="text" name="phone" placeholder="Phone" required><br>
+        <div class="area_phone">
+            <div size="4">
+            <select id="country">
+                <option v-for="code in country_codes">
+                    {{code.text}}
+                </option>
+            </select>
+            </div>
+            <div>
+            <input
+                    id="phone"
+                    type="text"
+                    name="phone"
+                    placeholder="Phone"
+                    v-model.trim="phone"
+                    required>
+                <span id="error_phone"></span>
         </div>
-        <div class="area5">
-            <input  id="user" type="text" name="user" placeholder="Username" required><br>
         </div>
-        <div class="area6">
+        <div class="area_username">
+            <input  id="user" type="text" name="user" placeholder="Username" v-model.trim="username" required>
+            <span id="error_user"></span>
+        </div>
+        <div class="area_button">
             <button type="submit">Send</button>
         </div>
     </div>

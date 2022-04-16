@@ -14,6 +14,20 @@ h2{
     font-family: "Helvetica Neue";
 }
 
+.area_phone{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-area: phone;
+}
+
+
+
+#country{
+    min-height: 35px;
+    max-height: 35px;
+    width: 90%;
+}
+
 input[type=text]{
     padding: 10px;
     border: 0;
@@ -32,30 +46,26 @@ label{
     margin-left: 200px;
 }
 
-.area1 {
+.area_name{
     margin-top: 10px;
     grid-area: name;
 }
 
-.area2{
+.area_surname{
     margin-top: 10px;
     grid-area: surname;
 }
 
-.area3{
+.area_state{
     grid-area: state;
 
 }
 
-.area4{
-    grid-area: phone;
-}
-
-.area5{
+.area_username{
     grid-area: username;
 }
 
-.area6{
+.area_button{
     grid-area: but;
 }
 
@@ -69,6 +79,8 @@ button{
     width: 100px;
     border: 0;
     border-radius: 10px;
-
 }
 
+span{
+    color:darkred;
+}
